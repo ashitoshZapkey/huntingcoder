@@ -1,0 +1,11 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+  }
+
+.blogItem h3{
+    cursor: pointer;
+}

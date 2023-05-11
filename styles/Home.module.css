@@ -1,9 +1,8 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 2rem;
   min-height: 100vh;
 }
 
@@ -54,20 +53,7 @@
   /* padding: 4rem 0; */
 }
 
-.center::before {
-  background: var(--secondary-glow);
-  border-radius: 50%;
-  width: 480px;
-  height: 360px;
-  margin-left: -400px;
-}
 
-.center::after {
-  background: var(--primary-glow);
-  width: 240px;
-  height: 180px;
-  z-index: -1;
-}
 
 .center::before,
 .center::after {
@@ -125,6 +111,13 @@
   background-clip: content-box;
 }
 
+.mainDivNav{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
 .mainDivNav ul{
   display: flex;
 }
@@ -134,6 +127,15 @@
   color: black;
   margin: 0px 20px;
   list-style: none;
+  font-weight: 900;
+}
+
+.imageWrapper{
+  margin:20px 0px;
+}
+
+.homeImage{
+  border-radius: 20px;
 }
 
 /* Enable hover only on non-touch devices */
