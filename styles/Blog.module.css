@@ -5,6 +5,9 @@
     padding: 2rem;
     min-height: 100vh;
   }
+.blogItem{
+  margin-top: 20px;
+}
 
 .blogItem h3{
     cursor: pointer;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import styles from '@/styles/Blog.module.css'
 import Link from 'next/link'
 
@@ -7,14 +7,27 @@ import Link from 'next/link'
 
 
 const Blog = () =>{
+    const [blogs, setblogs] = useState([]);
+    useEffect(() => {
+      fetch("http://localhost:3000/api/blogs").then((a)=>{
+        return a.json();
+      }).then((parsed)=>{
+        setblogs(parsed);
+      });
+    },[])
+    
     return <>
     <main className={styles.main}><div className="blogs">
-    <div className={styles.blogItem}>
-        <Link href="/blogpost/lern-javascript">
-            <h2>How to learn javascript 2023</h2>
-        </Link>
-        <p>Javascript used to design logic for website </p>
-    </div>
+    {
+        blogs.map((blogItem)=>{
+            return <div className={styles.blogItem} key={blogItem.slug}>
+            <Link href={`/blogpost/${blogItem.slug}`}>
+                <h2>{blogItem.title}</h2>
+            </Link>
+            <p>{blogItem.content.substr(0,200)}...</p>
+        </div>
+        })
+    }
   </div>
   </main></>;
 };
